@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Bestill billetter til Joyland Adventure Park</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<div id="wrapper" class="fade-in">
+			<div id="intro">
+				<h1>Book opplevelsen din nå</h1>
+				<p>Bestill din opplevelse enkelt og sikkert her!</p>
+				<ul class="actions">
+					<li><a href="#best" class="button icon solid solo fa-arrow-down scrolly"></a></li>
+				</ul>
+			</div>
+				<header id="header">
+					<a href="index.html" class="logo"></a>
+				</header>
+				<nav id="nav">
+					<ul class="links">
+						<li><a href="index.html">Infosiden</a></li>
+						<li><a href="Menyen.html">Menysiden</a></li>
+						<li class="active"><a href="Bestilling.html">Bestillingssiden</a></li>
+					</ul>
+				</nav>
+		<div id="main">
+			<h1 id="best"><a href="">Bestill din dag med moro og spenning</a></h1>
+			<form>
+				<label for="adult">Antall voksne (295 kr per voksen)</label>
+				<input type="number" id="adult" name="adult" min="0">
+				<br>
+				<label for="child">Antall barn, 3-16 år (149 kr per barn)</label>
+				<input type="number" id="child" name="child" min="0">
+				<br>
+				<label for="infant">Antall barn, 0-3 år (gratis)</label>
+				<input type="number" id="infant" name="infant" min="0">
+				<br>
+				<label for="stroller">Barnevogn</label>
+				<select id="stroller" name="stroller">
+					<option value="no">Nei</option>
+					<option value="yes">Ja</option>
+				</select>
+				<br>
+				<label for="waterpark">Tilgang til badeland (139 kr per person, uavhengig av alder)</label>
+				<input type="number" id="waterpark" name="waterpark" min="0">
+				<br>
+				<label for="surprise">Overraskelsesposer med godteri og leke (99 kr per pose)</label>
+				<input type="number" id="surprise" name="surprise" min="0">
+				<br>
+				<p id="total">Totalpris: 0 kr</p>
+				<p id="order">Ingenting er bestilt</p>
+			</form>
+			<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+				<!-- Identify your business so that you can collect the payments. --> <input type="hidden" name="business"
+					value="herschelgomez@xyzzyu.com"> <!-- Specify a Buy Now button. --> <input type="hidden" name="cmd"
+					value="_xclick"> <!-- Specify details about the item that buyers will purchase. --> <input type="hidden"
+					name="item_name" value="Hot Sauce-12oz. Bottle"> <input type="hidden" name="amount" value="5.95"> <input
+					type="hidden" name="currency_code" value="USD"> <!-- Display the payment button. --> <input type="image"
+					name="submit" border="0" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" alt="Buy Now">
+				<img alt="" border="0" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+			</form>
+			<ul class="actions special">
+				<li><a href="https://methusan105.github.io/Adventure-Island/index.html" class="button large">Tilbake til Infoen</a></li>
+			</ul>
+			<script>
+				const form = document.querySelector('form');
+				form.addEventListener('input', calculateTotal);
+		
+				function calculateTotal(e) {
+					e.preventDefault();
+		
+					const adult = form.adult.value;
+					const child = form.child.value;
+					const infant = form.infant.value;
+					const stroller = form.stroller.value;
+					const waterpark = form.waterpark.value;
+					const surprise = form.surprise.value;
+		
+					let total = (adult * 295) + (child * 149) + (waterpark * 139) + (surprise * 99);
+					let order = `Bestilt for ${adult} voksne, ${child} barn og ${infant} småbarn. Barnevogn bestilt: ${stroller === 'yes' ? 'Ja' : 'Nei'}. Tilgang til badeland bestilt for ${waterpark} personer. ${surprise} overraskelsesposer bestilt.`;
+		
+					const totalEl = document.querySelector('#total');
+					totalEl.innerHTML = `Totalpris: ${total} kr`;
+		
+					const orderEl = document.querySelector('#order');
+					orderEl.innerHTML = order;
+				}
+		
+			</script>
+		</div>
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
