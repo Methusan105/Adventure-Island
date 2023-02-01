@@ -53,54 +53,6 @@
 				<p id="total">Totalpris: 0 kr</p>
 				<p id="order">Ingenting er bestilt</p>
 			</form>
-			<h2>Pakke med 10 ANTALL VOKSNE, <br> 10 ANTALL BARN, <br>BARNEVOGN JA, <br> TILGANG TIL BADELAND, <br> 10 OVERRASKELSESPOSER MED GODTERI OG LEKE</h2>
-<div id="smart-button-container">
-      <div style="text-align: center;">
-        <div id="paypal-button-container"></div>
-      </div>
-    </div>
-  <script src="https://www.paypal.com/sdk/js?client-id=AV80nZnM7qGomB-Xx65c_x0542MvUwkIXkrStRconYcFlts1KWAM9uLGPwLLfvAZPEn6ZAPJgxOsHxWE&enable-funding=venmo&currency=NOK" data-sdk-integration-source="button-factory"></script>
-  <script>
-    function initPayPalButton() {
-      paypal.Buttons({
-        style: {
-          shape: 'pill',
-          color: 'blue',
-          layout: 'vertical',
-          label: 'paypal',
-          
-        },
-
-        createOrder: function(data, actions) {
-          return actions.order.create({
-            purchase_units: [{"description":"10 ANTALL VOKSNE\n10 ANTALL BARN\nBARNEVOGN JA\n20 TILGANG TIL BADELAND\n10 OVERRASKELSESPOSER MED GODTERI OG LEKE\n","amount":{"currency_code":"NOK","value":8210}}]
-          });
-        },
-
-        onApprove: function(data, actions) {
-          return actions.order.capture().then(function(orderData) {
-            
-            // Full available details
-            console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
-
-            // Show a success message within this page, e.g.
-            const element = document.getElementById('paypal-button-container');
-            element.innerHTML = '';
-            element.innerHTML = '<h3>Thank you for your payment!</h3>';
-
-            // Or go to another URL:  actions.redirect('thank_you.html');
-            
-          });
-        },
-
-        onError: function(err) {
-          console.log(err);
-        }
-      }).render('#paypal-button-container');
-    }
-    initPayPalButton();
-  </script>
-
 			<ul class="actions special">
 				<li><a href="https://methusan105.github.io/Adventure-Island/index.html" class="button large">Tilbake til Infoen</a></li>
 			</ul>
