@@ -55,7 +55,7 @@
                 localStorage.infant = form.infant.value
                 localStorage.stroller = form.stroller.value
                 localStorage.waterpark = form.waterpark.value
-                localStorage.surprise = form.surprise.value
+                localStorage.surprise = form.surprise.value 
                 let total = (adult * 295) + (child * 149) + (waterpark * 139) + (surprise * 99);
                 let order = `Bestilt for ${adult} voksne, ${child} barn og ${infant} småbarn. Barnevogn bestilt: ${stroller === 'yes' ? 'Ja' : 'Nei'}. Tilgang til badeland bestilt for ${waterpark} personer. ${surprise} overraskelsesposer bestilt.`;
                 const totalEl = document.querySelector('#total');

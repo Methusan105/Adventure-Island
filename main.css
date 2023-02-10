@@ -42,8 +42,60 @@ label{
     font-size:18px;
     border-radius:5px;
   }
-#info{
+#intro{
     position: relative;
-    top: 15px;
-    text-align: center;
+    right:400px;
+    background-color: black;
+    max-width:1000px;
+    margin:2rem auto;
+    border:2px solid #E74C3C;
+    padding:2rem;
+    border-radius:5px;
+}
+.post{
+    position: relative;
+    right: 400px;
+    background-color: white;
+    max-width:1000px;
+    margin:2rem auto;
+    border:2px solid #E74C3C;
+    padding:2rem;
+    border-radius:5px;
+}
+.op{
+    color: black;
+}
+.op2{
+    color: black;
+}
+.meny{
+    color: black;
+}
+.pris00{
+    color: black;
+}
+.pris0{
+    color: black;
+}
+.pris{
+    color: black;
+}
+.pris2{
+    color: black;
+}
+.pris3{
+    color: black;
+}
+.pris4{
+    color: black;
+}
+.pris5{
+    color: black;
+}
+.pris6{
+    color: black;
+}
+#redir{
+    position: relative;
+    left: 850px;
 }
