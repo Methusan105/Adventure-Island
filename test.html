@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="hoved">
+        <h1>Huskeliste</h1>
+        <ul></ul>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
+    <script type="module">
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCBemVrk1K10JtminM9Nbif8Qbj5PGrUJ4",
+            authDomain: "huskeliste-98ca3.firebaseapp.com",
+            projectId: "huskeliste-98ca3",
+            storageBucket: "huskeliste-98ca3.appspot.com",
+            messagingSenderId: "493748566853",
+            appId: "1:493748566853:web:74ea820fe80d51e7b69c2c"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        //
+        let db= firebase.firestore();
+
+        let ulEl=document.querySelector("ul");
+
+        db.collection("huskeliste").get().then((snapshot) => {
+            let dokumenter = snapshot.docs;
+
+            for(let i =0; i<dokumenter.length;i++){
+                //Gjør noe med hvert element
+                visHuskeElement(dokumenter[i]);
+            }
+        })
+        function visHuskeElement(dokument){
+            let liEl= document.createElement("li");
+            liEl.innerHTML= dokument.data().husketekst;
+            ulEl.appendChild(liEl);
+
+        }
+    </script>
+</body>
+</html>
