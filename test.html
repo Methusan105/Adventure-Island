@@ -14,7 +14,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
     <script type="module">
-        // Your web app's Firebase configuration
+        // Firebase Konfigurasjon
         const firebaseConfig = {
             apiKey: "AIzaSyCBemVrk1K10JtminM9Nbif8Qbj5PGrUJ4",
             authDomain: "huskeliste-98ca3.firebaseapp.com",
@@ -23,12 +23,10 @@
             messagingSenderId: "493748566853",
             appId: "1:493748566853:web:74ea820fe80d51e7b69c2c"
         };
-
-        // Initialize Firebase
+        // Initaliserer Firebase
         firebase.initializeApp(firebaseConfig);
-        //
+        // Lager Variabler
         let db= firebase.firestore();
-
         let ulEl=document.querySelector("ul");
 
         db.collection("huskeliste").get().then((snapshot) => {
@@ -43,7 +41,6 @@
             let liEl= document.createElement("li");
             liEl.innerHTML= dokument.data().husketekst;
             ulEl.appendChild(liEl);
-
         }
     </script>
 </body>

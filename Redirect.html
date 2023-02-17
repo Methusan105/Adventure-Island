@@ -12,8 +12,10 @@
 
 
             <header class="major">
+                <!-- Skriver inn i HTML-filen: Her er din bestilling -->
                 <h2 id="info"><a id="redir">Her er din bestilling:<br />
                     </a></h2>
+                    <!-- Viser til bestilling -->
                 <form class="bestilling">
                 <h3 id="adult"></h3>
                 <h3 id="child"></h3>
@@ -24,10 +26,12 @@
                 </form>
             </header>
             <ul class="actions special">
+                <!-- Legger til en knapp som kan omdirigere tilbake til forsiden -->
                 <li><a href="index.html" class="button large">Tilbake til forsiden</a></li>
             </ul>
     </div>
     <style>
+        /* CSS stil for #fjern */
         #fjern{
             position: relative;
             bottom: 445px;
@@ -36,19 +40,21 @@
 
     </style>
     <script>
+        /* Definerer ulike typer variabler */
         let voksneEl = document.getElementById("adult")
         let childEl = document.getElementById("child")
         let infantEl = document.getElementById("infant")
         let strollerEl = document.getElementById("stroller")
         let waterparkEl = document.getElementById("waterpark")
         let surpriseEl = document.getElementById("surprise")
-
+        /* Skriver bestillingen inn i nettsiden */
         voksneEl.innerHTML = " Du bestilte:" + localStorage.adult + " voksne billett"
         childEl.innerHTML = localStorage.child + " barne billett"
         infantEl.innerHTML = localStorage.infant + " småbarn billett"
         strollerEl.innerHTML = localStorage.stroller + " Barnevogn billett"
         waterparkEl.innerHTML = localStorage.waterpark + " Badeland billett"
         surpriseEl.innerHTML = localStorage.surprise + " Overraskelseposer billett"
+        /* Definerer en funksjon og lager en lytter som kjører en funksjon når knappen trykkes på */
         const fjern = document.getElementById('fjern');
             fjern.addEventListener('click', fjernbestilling);
         
